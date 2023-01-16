@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className="navbar bg-gray-200 px-10">
+        <div className="navbar bg-gray-200 lg:px-10">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -11,10 +11,13 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link>Foods</Link></li>
+                        <li><Link>Blogs</Link></li>
+                        <li><Link><button type="button" className="font-semibold border-2 rounded border-red-700 text-red-900 btn btn-sm btn-outline">Sign In</button></Link></li>
+                        <li><Link><button type="button" className="btn btn-sm font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link></li>
                     </ul>
                 </div>
-                <img className='w-10' src="https://foodcuration.org/wp-content/uploads/2016/05/food-curation-favicon-5-1.png" alt="" srcset="" />
-                <Link className="btn btn-ghost normal-case text-xl">Kuddus Online Food Service</Link>
+                <img className='w-5 lg:w-10' src="https://foodcuration.org/wp-content/uploads/2016/05/food-curation-favicon-5-1.png" alt="" srcset="" />
+                <Link className="btn btn-ghost normal-case text-lg lg:text-xl">Kuddus Online Food Service</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -22,9 +25,11 @@ const Header = () => {
                     <li><Link>Blogs</Link></li>
                 </ul>
             </div>
-            <div className='navbar-end gap-3'>
-                <Link><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-700 text-red-900 btn btn-outline">Sign In</button></Link>
-                <Link><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link>
+            <div className='navbar-end hidden lg:flex'>
+                <div className="menu menu-horizontal px-1 gap-3">
+                    <Link><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-700 text-red-900 btn btn-outline">Sign In</button></Link>
+                    <Link><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link>
+                </div>
             </div>
             {/* <div className="navbar-end">
                 <div className="dropdown dropdown-end">
