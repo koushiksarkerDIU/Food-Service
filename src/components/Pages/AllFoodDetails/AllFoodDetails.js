@@ -19,16 +19,16 @@ const AllFoodDetails = () => {
     }, [])
     return (
         <div>
-            <div className='grid grid-cols-2 gap-8'>
+            <div className='grid grid-cols-2 gap-8 mt-10'>
                 {
                     allFoods.map(food => {
-                        const { _id, title, ratting, total_view, image, price, details } = food;
+                        const { _id, title, image, price, details } = food;
                         return (
                             <div key={_id} food={food} className="flex flex-col p-6 w-3/4 space-y-6 overflow-hidden rounded-lg shadow-md  bg-gray-100 text-black-100 mx-auto" >
                                 <div>
-                                    <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96 dark:bg-gray-500" />
+                                    <img src={image} alt="" className="object-cover w-full mb-4 h-60 sm:h-96" />
                                     <h2 className="mb-1 text-xl font-semibold">{title}</h2>
-                                    <p className="text-sm dark:text-gray-400">{details.slice(0, 200) + '...'} see more</p>
+                                    <p className="text-sm dark:text-gray-400">{details.slice(0, 100) + '...'} see more</p>
                                 </div>
                                 <div className="flex flex-wrap justify-between">
                                     <div className="flex space-x-2 text-sm dark:text-gray-400">
@@ -47,6 +47,9 @@ const AllFoodDetails = () => {
                         )
                     })
                 }
+            </div>
+            <div className='flex justify-center my-10'>
+                <Link to='/foods'><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">See all</button></Link>
             </div>
         </div >
     );

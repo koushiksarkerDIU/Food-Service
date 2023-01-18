@@ -11,9 +11,9 @@ const Header = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li><Link to='/foods'>Foods</Link></li>
-                        <li><Link>Blogs</Link></li>
-                        <li><Link>My Reviews</Link></li>
-                        <li><Link>Add Service</Link></li>
+                        <li><Link to='/blogs'>Blogs</Link></li>
+                        <li><Link to='/myreview'>My Reviews</Link></li>
+                        <li><Link to='/addfood'>Add Food</Link></li>
                         <li><Link><button type="button" className="font-semibold border-2 rounded border-red-700 text-red-900 btn btn-sm btn-outline">Sign In</button></Link></li>
                         <li><Link><button type="button" className="btn btn-sm font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link></li>
                     </ul>
@@ -24,9 +24,9 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to='/foods'>Foods</Link></li>
-                    <li><Link>Blogs</Link></li>
-                    <li><Link>My Reviews</Link></li>
-                    <li><Link>Add Service</Link></li>
+                    <li><Link to='/blogs'>Blogs</Link></li>
+                    <li><Link to='/myreview'>My Reviews</Link></li>
+                    <li><Link to='/addfood'>Add Food</Link></li>
                 </ul>
             </div>
             <div className='navbar-end hidden lg:flex'>
