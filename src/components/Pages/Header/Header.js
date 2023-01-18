@@ -10,25 +10,29 @@ const Header = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><Link>Foods</Link></li>
+                        <li><Link to='/foods'>Foods</Link></li>
                         <li><Link>Blogs</Link></li>
+                        <li><Link>My Reviews</Link></li>
+                        <li><Link>Add Service</Link></li>
                         <li><Link><button type="button" className="font-semibold border-2 rounded border-red-700 text-red-900 btn btn-sm btn-outline">Sign In</button></Link></li>
                         <li><Link><button type="button" className="btn btn-sm font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link></li>
                     </ul>
                 </div>
-                <img className='w-5 lg:w-10' src="https://foodcuration.org/wp-content/uploads/2016/05/food-curation-favicon-5-1.png" alt="" srcset="" />
-                <Link className="btn btn-ghost normal-case text-lg lg:text-xl">Kuddus Online Food Service</Link>
+                <img className='w-5 lg:w-10' src="https://foodcuration.org/wp-content/uploads/2016/05/food-curation-favicon-5-1.png" alt="" srcSet="" />
+                <Link to='/' className="btn btn-ghost normal-case text-base lg:text-xl">Kuddus Online Food Delivery Service</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><Link>Foods</Link></li>
+                    <li><Link to='/foods'>Foods</Link></li>
                     <li><Link>Blogs</Link></li>
+                    <li><Link>My Reviews</Link></li>
+                    <li><Link>Add Service</Link></li>
                 </ul>
             </div>
             <div className='navbar-end hidden lg:flex'>
                 <div className="menu menu-horizontal px-1 gap-3">
-                    <Link><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-700 text-red-900 btn btn-outline">Sign In</button></Link>
-                    <Link><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link>
+                    <Link><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-600 text-red-900 btn btn-outline">Sign In</button></Link>
+                    <Link><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">Login</button></Link>
                 </div>
             </div>
             {/* <div className="navbar-end">

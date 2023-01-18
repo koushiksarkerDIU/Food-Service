@@ -2,3 +2,9 @@
     max-height: 600px;
     min-height: 5rem;
 }
+
+.btn-bg a {
+    background-color: red;
+    color: white;
+    border: none;
+}
