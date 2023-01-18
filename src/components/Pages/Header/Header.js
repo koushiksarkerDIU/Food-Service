@@ -14,8 +14,8 @@ const Header = () => {
                         <li><Link to='/blogs'>Blogs</Link></li>
                         <li><Link to='/myreview'>My Reviews</Link></li>
                         <li><Link to='/addfood'>Add Food</Link></li>
-                        <li><Link><button type="button" className="font-semibold border-2 rounded border-red-700 text-red-900 btn btn-sm btn-outline">Sign In</button></Link></li>
-                        <li><Link><button type="button" className="btn btn-sm font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link></li>
+                        <li><Link to='/signin'><button type="button" className="font-semibold border-2 rounded border-red-700 text-red-900 btn btn-sm btn-outline">Sign In</button></Link></li>
+                        <li><Link to='/login'><button type="button" className="btn btn-sm font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Login</button></Link></li>
                     </ul>
                 </div>
                 <img className='w-5 lg:w-10' src="https://foodcuration.org/wp-content/uploads/2016/05/food-curation-favicon-5-1.png" alt="" srcSet="" />
@@ -31,8 +31,8 @@ const Header = () => {
             </div>
             <div className='navbar-end hidden lg:flex'>
                 <div className="menu menu-horizontal px-1 gap-3">
-                    <Link><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-600 text-red-900 btn btn-outline">Sign In</button></Link>
-                    <Link><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">Login</button></Link>
+                    <Link to='/signin'><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-600 text-red-900 btn btn-outline">Sign In</button></Link>
+                    <Link to='/login'><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">Login</button></Link>
                 </div>
             </div>
             {/* <div className="navbar-end">
