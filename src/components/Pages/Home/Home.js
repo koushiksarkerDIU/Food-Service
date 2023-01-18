@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css'
 import AllFoodDetails from '../AllFoodDetails/AllFoodDetails';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
@@ -37,6 +38,9 @@ const Home = () => {
             </div>
             <div>
                 <AllFoodDetails />
+            </div>
+            <div className='flex justify-center my-10'>
+                <Link to='/foods'><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">See all</button></Link>
             </div>
         </div>
     );

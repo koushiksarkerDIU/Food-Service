@@ -23,6 +23,7 @@ const AllFoodDetails = () => {
                 {
                     allFoods.map(food => {
                         const { _id, title, image, price, details } = food;
+                        // console.log(food);
                         return (
                             <div key={_id} food={food} className="flex flex-col p-6 w-3/4 space-y-6 overflow-hidden rounded-lg shadow-md  bg-gray-100 text-black-100 mx-auto" >
                                 <div>
@@ -47,9 +48,6 @@ const AllFoodDetails = () => {
                         )
                     })
                 }
-            </div>
-            <div className='flex justify-center my-10'>
-                <Link to='/foods'><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">See all</button></Link>
             </div>
         </div >
     );
