@@ -8,6 +8,7 @@ import Login from "../../Pages/Login/Login";
 import MyReview from "../../Pages/MyReview/MyReview";
 import SignIn from "../../Pages/Signin/Signin";
 import SingleFoodCard from "../../Pages/SingleFoodCard/SingleFoodCard";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -28,11 +29,11 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/addfood',
-                element: <AddFood />
+                element: <PrivateRoute><AddFood /></PrivateRoute>
             },
             {
                 path: '/myreview',
-                element: <MyReview />
+                element: <PrivateRoute><MyReview /></PrivateRoute>
             },
             {
                 path: '/blogs',

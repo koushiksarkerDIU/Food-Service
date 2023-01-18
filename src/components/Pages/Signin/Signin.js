@@ -41,7 +41,9 @@ const SignIn = () => {
             photoURL: photoURL,
         }
         updateUserProfile(profile)
-            .then(() => { })
+            .then(() => {
+
+            })
             .catch(error => console.error(error))
     }
 

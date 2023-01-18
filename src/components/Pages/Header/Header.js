@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FaUser } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user, logOut } = useContext(AuthContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                // console.log('logout successfully');
+            })
+            .catch((error) => {
+                console.error(error);
+            })
+    }
     return (
         <div className="navbar bg-gray-200 lg:px-10">
             <div className="navbar-start">
@@ -25,26 +37,78 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><Link to='/foods'>Foods</Link></li>
                     <li><Link to='/blogs'>Blogs</Link></li>
-                    <li><Link to='/myreview'>My Reviews</Link></li>
-                    <li><Link to='/addfood'>Add Food</Link></li>
+
+                    {
+                        user?.uid ?
+                            <>
+                                <li><Link to='/myreview'>My Reviews</Link></li>
+                                <li><Link to='/addfood'>Add Food</Link></li>
+                            </> :
+                            <>
+                                <div></div>
+                            </>
+
+                    }
                 </ul>
             </div>
             <div className='navbar-end hidden lg:flex'>
-                <div className="menu menu-horizontal px-1 gap-3">
-                    <Link to='/signin'><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-600 text-red-900 btn btn-outline">Sign In</button></Link>
-                    <Link to='/login'><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">Login</button></Link>
-                </div>
+                {
+                    user?.uid ?
+                        <>
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className=" rounded-full">
+                                        {
+                                            user?.photoURL ?
+                                                <img className='' style={{ height: '50px', width: '50px', border: '1px solid white', borderRadius: '50%' }} src={user.photoURL} alt="" /> :
+                                                <div>
+                                                    <FaUser className='text-2xl'></FaUser>
+                                                </div>
+                                        }
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                                    {
+                                        user?.uid ? <>
+                                            <li><span>{user.displayName}</span></li>
+                                            <li><span onClick={handleLogOut}>Log Out</span></li>
+                                        </> : <>
+                                            <li><Link to='/login'>Login</Link></li>
+                                            <li><Link to='/signin'>Sign In</Link></li>
+                                        </>
+                                    }
+                                </ul>
+                            </div>
+                        </> : <div className="menu menu-horizontal px-1 gap-3">
+                            <Link to='/signin'><button type="button" className="px-8 py-3 font-semibold border-2 rounded border-red-600 text-red-900 btn btn-outline">Sign In</button></Link>
+                            <Link to='/login'><button type="button" className="px-8 py-3 font-semibold border rounded bg-red-600 border-red-700 text-gray-100">Login</button></Link>
+                        </div>
+                }
+
             </div>
             {/* <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img src="https://placeimg.com/80/80/people" />
+                        <div className=" rounded-full">
+                            {
+                                user?.photoURL ?
+                                    <img className='' style={{ height: '50px', width: '50px', border: '1px solid white', borderRadius: '50%' }} src={user.photoURL} alt="" /> :
+                                    <div>
+                                        <FaUser className='text-2xl'></FaUser>
+                                    </div>
+                            }
                         </div>
                     </label>
                     <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                        <li><a>Profile</a></li>
-                        <li><a>Logout</a></li>
+                        {
+                            user?.uid ? <>
+                                <li><span>{user?.displayName}</span></li>
+                                <li><span onClick={handleLogOut}>Log Out</span></li>
+                            </> : <>
+                                <li><Link to='/login'>Login</Link></li>
+                                <li><Link to='/signin'>Sign In</Link></li>
+                            </>
+                        }
                     </ul>
                 </div>
             </div> */}
