@@ -3,6 +3,7 @@ import Main from "../../layout/Main";
 import AddFood from "../../Pages/AddFood/AddFood";
 import AllFoodDetails from "../../Pages/AllFoodDetails/AllFoodDetails";
 import Blogs from "../../Pages/Blogs/Blogs";
+import Error from "../../Pages/Error/Error";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import MyReview from "../../Pages/MyReview/MyReview";
@@ -14,6 +15,7 @@ export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+        errorElement: <Error />,
         children: [
             {
                 path: '/',
