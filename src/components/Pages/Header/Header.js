@@ -8,7 +8,7 @@ const Header = () => {
     const handleLogOut = () => {
         logOut()
             .then(() => {
-                // console.log('logout successfully');
+                console.log('logout successfully');
             })
             .catch((error) => {
                 console.error(error);
