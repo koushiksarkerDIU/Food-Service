@@ -86,32 +86,6 @@ const Header = () => {
                 }
 
             </div>
-            {/* <div className="navbar-end">
-                <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                        <div className=" rounded-full">
-                            {
-                                user?.photoURL ?
-                                    <img className='' style={{ height: '50px', width: '50px', border: '1px solid white', borderRadius: '50%' }} src={user.photoURL} alt="" /> :
-                                    <div>
-                                        <FaUser className='text-2xl'></FaUser>
-                                    </div>
-                            }
-                        </div>
-                    </label>
-                    <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                        {
-                            user?.uid ? <>
-                                <li><span>{user?.displayName}</span></li>
-                                <li><span onClick={handleLogOut}>Log Out</span></li>
-                            </> : <>
-                                <li><Link to='/login'>Login</Link></li>
-                                <li><Link to='/signin'>Sign In</Link></li>
-                            </>
-                        }
-                    </ul>
-                </div>
-            </div> */}
         </div>
     );
 };
