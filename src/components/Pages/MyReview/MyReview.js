@@ -6,7 +6,7 @@ const MyReview = () => {
     const { user } = useContext(AuthContext);
     const [myReview, setMyReview] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
+        fetch(`https://server-site-murex.vercel.app/myReviews?email=${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data.data)

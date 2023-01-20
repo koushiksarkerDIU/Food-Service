@@ -6,7 +6,6 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 const Login = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const [error, setError] = useState('');
-    const [userEmail, setUserEmail] = useState('')
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -46,18 +45,13 @@ const Login = () => {
             });
     }
 
-    const handleEmail = (e) => {
-        const email = e.target.value;
-        setUserEmail(email);
-    }
-
     return (
         <div className="w-1/2 p-8 space-y-3 rounded-xl bg-gray-100 dark:text-gray-100 mt-10 mx-auto">
             <h1 className="text-2xl font-bold text-center">Login</h1>
             <form onSubmit={handleSignIn} className="space-y-6 ng-untouched ng-pristine ng-valid">
                 <div className="space-y-1 text-sm">
                     <label htmlFor="username" className="block ">Enter your email</label>
-                    <input onBlur={handleEmail} type="email" name="email" id="username" placeholder="Enter your email" className="w-full px-4 py-3 rounded-md" />
+                    <input type="email" name="email" id="username" placeholder="Enter your email" className="w-full px-4 py-3 rounded-md" />
                 </div>
                 <div className="space-y-1 text-sm">
                     <label htmlFor="password" className="block ">Password</label>

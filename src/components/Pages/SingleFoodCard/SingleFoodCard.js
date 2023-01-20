@@ -13,7 +13,7 @@ const SingleFoodCard = () => {
     const [reload, setReload] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/food/${id}`)
+        fetch(`https://server-site-murex.vercel.app/food/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
@@ -37,7 +37,7 @@ const SingleFoodCard = () => {
             image: user?.photoURL
         }
         console.log(customerReview);
-        fetch("http://localhost:5000/addReview", {
+        fetch("https://server-site-murex.vercel.app/addReview", {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -61,7 +61,7 @@ const SingleFoodCard = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/addReview?id=${id}`)
+        fetch(`https://server-site-murex.vercel.app/addReview?id=${id}`)
             .then(res => res.json())
             .then(data => {
                 setAllReviews(data.data);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const AddFood = () => {
@@ -12,7 +12,7 @@ const AddFood = () => {
             price: parseInt(e.target.price.value),
             details: e.target.details.value
         };
-        fetch("http://localhost:5000/foods", {
+        fetch("https://server-site-murex.vercel.app/foods", {
             method: "POST",
             headers: {
                 "content-type": "application/json"

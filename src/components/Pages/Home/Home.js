@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Home.css'
-import AllFoodDetails from '../AllFoodDetails/AllFoodDetails';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Home = () => {
     const [allFoods, setAllFoods] = useState([])
     useEffect(() => {
-        fetch("http://localhost:5000")
+        fetch("https://server-site-murex.vercel.app")
             .then(res => res.json())
             .then(data => {
                 if (data.success) {
