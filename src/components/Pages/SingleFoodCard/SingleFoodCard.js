@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Form, Link, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaEye, FaStar, FaUser } from "react-icons/fa";
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
@@ -48,9 +48,11 @@ const SingleFoodCard = () => {
                 if (data.success) {
                     toast.success(data.message)
                     setReload(!reload)
+                    e.target.reset();
                 } else {
                     toast.error(data.error);
                 }
+
             })
             .catch(err => {
                 toast.error(err.message);
@@ -120,7 +122,7 @@ const SingleFoodCard = () => {
                 {
                     user ?
                         <div className="flex flex-col w-1/2 mx-auto p-8 shadow-sm rounded-xl lg:p-12 bg-gray-200">
-                            <form onSubmit={handleReview} className="flex flex-col items-center w-full">
+                            <Form onSubmit={handleReview} className="flex flex-col items-center w-full">
                                 <h2 className="text-3xl font-semibold text-center">Write your review</h2>
                                 <span className="text-center">How was your experience?</span>
                                 <div className="flex gap-4 items-center py-6 space-y-3">
@@ -140,9 +142,9 @@ const SingleFoodCard = () => {
                                 </div>
                                 <div className="flex flex-col w-full">
                                     <textarea name='review' rows="3" placeholder="Message..." className="p-4 rounded-md resize-none dark:text-gray-100 dark:bg-gray-900"></textarea>
-                                    <button name='submit' className="py-4 my-8 w-1/2 mx-auto  btn font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Leave feedback</button>
+                                    <button name='submit' type='submit' className="py-4 my-8 w-1/2 mx-auto  btn font-semibold border rounded bg-red-700 border-red-700 text-gray-100">Leave feedback</button>
                                 </div>
-                            </form>
+                            </Form>
                         </div>
                         : <div className='text-center text-xl mt-10 mx-auto p-5 w-2/5 rounded-md bg-red-300'>
                             Please <Link to='/login' className='font-semibold underline'>login</Link> to write a review
