@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyBU2wJuSHGTLnzxBK69qKf2WaM1ySJy9tM",
-    authDomain: "kuddus-online-food-delivery.firebaseapp.com",
-    projectId: "kuddus-online-food-delivery",
-    storageBucket: "kuddus-online-food-delivery.appspot.com",
-    messagingSenderId: "319213298878",
-    appId: "1:319213298878:web:4ffe09e3ea67ae7535eaef"
+    apiKey: process.env.REACT_APP_apiKey,
+    authDomain: process.env.REACT_APP_authDomain,
+    projectId: process.env.REACT_APP_projectId,
+    storageBucket: process.env.REACT_APP_storageBucket,
+    messagingSenderId: process.env.REACT_APP_messagingSenderId,
+    appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
