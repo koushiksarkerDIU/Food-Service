@@ -30,6 +30,7 @@ const SingleFoodCard = () => {
         e.preventDefault();
         const customerReview = {
             foodId: id,
+            title: food?.title,
             name: e.target.name.value,
             review: e.target.review.value,
             email: user?.email,
